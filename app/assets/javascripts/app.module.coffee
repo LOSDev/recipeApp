@@ -1,0 +1,1 @@
+angular.module('app', ['ng-token-auth', 'templates', 'ui.router'])

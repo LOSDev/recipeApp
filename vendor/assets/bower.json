@@ -1,0 +1,9 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap-sass": "latest",
+    "angular": "latest",
+    "angular-ui-router": "latest",
+    "ng-token-auth": "latest"
+  }
+}
