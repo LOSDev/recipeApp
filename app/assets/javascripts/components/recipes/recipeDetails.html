@@ -1,13 +1,38 @@
-<div class="">
-  <img ng-src="{{$ctrl.recipe.image.image.medium.url}}" class="img-responsive"/>
-</div>
-<h1>{{$ctrl.recipe.title}}</h1>
-<i>{{$ctrl.recipe.created_at | date}}</i>
-<p>
-  {{$ctrl.recipe.description}}
-</p>
-<p>
-  <a ng-if="$root.user.id == $ctrl.recipe.user.id" ui-sref="app.editRecipe({id: $ctrl.recipe.id})" class="btn btn-info">Edit Recipe</a>
-  <a ng-if="$root.user.id == $ctrl.recipe.user.id" class="btn btn-danger" ng-click="$ctrl.delete()">Delete</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <img ng-src="{{$ctrl.recipe.image.image.medium.url}}" class="img-responsive"/>
 
-</p>
+    </div>
+    <div class="col-md-7">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>{{$ctrl.recipe.title}}<small class="pull-right"><i>{{$ctrl.recipe.created_at | date}}</i></small></h3>
+        </div>
+        <div class="panel-body">
+          <p>
+            {{$ctrl.recipe.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+
+
+    <div class="col-md-7">
+      <h3>Directions</h3>
+    </div>
+    <div class="col-md-5">
+      <ingredient-list ingredients="$ctrl.recipe.ingredients"></ingredient-list>
+
+    </div>
+  </div>
+
+  <p class="col-md-12">
+    <a ng-if="$root.user.id == $ctrl.recipe.user.id" ui-sref="app.editRecipe({id: $ctrl.recipe.id})" class="btn btn-info">Edit Recipe</a>
+    <a ng-if="$root.user.id == $ctrl.recipe.user.id" class="btn btn-danger" ng-click="$ctrl.delete()">Delete</a>
+
+  </p>
+</div>

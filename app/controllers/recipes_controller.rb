@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
+    puts params[:recipe][:ingredient_attributes]
     if @recipe.save
       render 'show'
     else
@@ -38,6 +39,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :image)
+    params.require(:recipe).permit(:title, :description, :image, :ingredients_attributes => [:id, :name])
   end
 end

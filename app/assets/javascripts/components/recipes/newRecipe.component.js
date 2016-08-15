@@ -6,6 +6,10 @@ angular.module('recipes')
 
 function NewRecipeController($state, Recipe) {
   var vm = this;
+  vm.recipe = {
+    ingredients_attributes: []
+  };
+
   vm.submit = function () {
     Recipe.create(vm.recipe)
     .then(function (resp) {
@@ -17,4 +21,6 @@ function NewRecipeController($state, Recipe) {
         console.log('progress: ' + progressPercentage + '% ' + evt);
     });
   }
+
+  
 }
