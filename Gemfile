@@ -22,6 +22,8 @@ gem 'bower-rails'
 gem 'devise_token_auth'
 gem 'angular-rails-templates'
 gem 'omniauth'
+gem 'carrierwave'
+gem "mini_magick"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

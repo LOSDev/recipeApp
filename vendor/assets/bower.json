@@ -5,6 +5,7 @@
     "angular": "latest",
     "angular-ui-router": "latest",
     "ng-token-auth": "latest",
-    "angular-toastr": "latest"
+    "angular-toastr": "latest",
+    "ng-file-upload": "latest"
   }
 }

@@ -1,9 +1,12 @@
 angular.module('recipes')
-.factory('Recipe', ['$http', function ($http) {
+.factory('Recipe', ['$http', 'Upload', function ($http, Upload) {
   var o = {};
   var urlBase = "/api/recipes"
-  o.create = function (recipe) {
-    return $http.post(urlBase + ".json", {recipe: recipe})
+  o.create = function (recipe, image) {
+    return Upload.upload({
+            url: urlBase + '.json',
+            data: {recipe: recipe}
+        })
   },
   o.update = function (recipe) {
     return $http.put(urlBase + "/" + recipe.id + ".json", {recipe: recipe})

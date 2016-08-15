@@ -16,7 +16,7 @@
 //= require angular-ui-router
 //= require angular-cookie
 //= require angular-toastr
-
+//= require ng-file-upload
 //= require ng-token-auth
 //= require angular-rails-templates
 
