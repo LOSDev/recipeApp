@@ -12,7 +12,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     })
     .state('app.home', {
       url: "",
-      template: "<h1>Home Page</h1>"
+      template: "<recipe-list></recipe-list>"
     })
 
 });

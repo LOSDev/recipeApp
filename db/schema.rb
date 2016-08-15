@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815094752) do
+ActiveRecord::Schema.define(version: 20160815114832) do
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
