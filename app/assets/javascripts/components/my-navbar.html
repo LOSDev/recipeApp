@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <ul class="nav navbar-nav">
+      <li ui-sref-active="active"><a ui-sref="app.home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li ui-sref-active="active"><a ui-sref="app.about"><span class="glyphicon glyphicon-user"></span> About</a></li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-show="!$root.user.id" ui-sref-active="active"><a ui-sref="app.login"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+      <li ng-show="$root.user.id"><a ui-sref="app.newPost"><span class="glyphicon glyphicon-pencil"></span> New Post</a></li>
+      <li ng-show="$root.user.id"><a ui-sref="app.settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+      <li ng-show="$root.user.id"><a href ng-click="$ctrl.logout()"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+
+    </ul>
+  </div><!-- /.container-fluid -->
+</nav>

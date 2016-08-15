@@ -1,1 +1,1 @@
-angular.module('app', ['ng-token-auth', 'templates', 'ui.router'])
+angular.module('app', ['ng-token-auth', 'templates', 'ui.router', 'users', 'toastr'])

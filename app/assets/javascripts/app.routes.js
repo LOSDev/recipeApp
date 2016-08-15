@@ -5,9 +5,14 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
   //
   // Now set up the states
   $stateProvider
-    .state('home', {
+    .state('app', {
       url: "/",
-      template: "<h1>Hello World</h1>"
+      abstract: true,
+      templateUrl: "components/app.html"
+    })
+    .state('app.home', {
+      url: "",
+      template: "<h1>Home Page</h1>"
     })
 
 });

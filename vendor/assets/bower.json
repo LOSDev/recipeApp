@@ -4,6 +4,7 @@
     "bootstrap-sass": "latest",
     "angular": "latest",
     "angular-ui-router": "latest",
-    "ng-token-auth": "latest"
+    "ng-token-auth": "latest",
+    "angular-toastr": "latest"
   }
 }
