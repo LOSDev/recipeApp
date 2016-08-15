@@ -1,6 +1,6 @@
 angular.module('app')
 .component('myNavbar', {
-  templateUrl: "components/my-navbar.html",
+  templateUrl: "components/myNavbar.html",
   controller: ['$state', '$auth', '$scope', '$rootScope', function ($state, $auth, $scope, $rootScope) {
     vm = this;
 

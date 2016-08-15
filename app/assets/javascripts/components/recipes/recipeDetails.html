@@ -3,3 +3,8 @@
 <p>
   {{$ctrl.recipe.description}}
 </p>
+<p>
+  <a ng-if="$root.user.id == $ctrl.recipe.user.id" ui-sref="app.editRecipe({id: $ctrl.recipe.id})" class="btn btn-info">Edit Recipe</a>
+  <a ng-if="$root.user.id == $ctrl.recipe.user.id" class="btn btn-danger" ng-click="$ctrl.delete()">Delete</a>
+
+</p>

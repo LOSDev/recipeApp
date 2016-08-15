@@ -5,8 +5,8 @@ angular.module('recipes')
   o.create = function (recipe) {
     return $http.post(urlBase + ".json", {recipe: recipe})
   },
-  o.update = function (post) {
-    return $http.put(urlBase + "/" + post.id + ".json", {post: post})
+  o.update = function (recipe) {
+    return $http.put(urlBase + "/" + recipe.id + ".json", {recipe: recipe})
   },
   o.get = function (id) {
     return $http.get(urlBase + "/" + id + ".json")
@@ -18,8 +18,8 @@ angular.module('recipes')
       return $http.get(urlBase + ".json" + "?page=" + page)
     }
   }
-  o.delete = function (post) {
-    return $http.delete(urlBase + "/" + post.id + ".json")
+  o.delete = function (recipe) {
+    return $http.delete(urlBase + "/" + recipe.id + ".json")
   }
   return o;
 }])

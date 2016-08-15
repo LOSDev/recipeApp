@@ -1,11 +1,13 @@
 class RecipesController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @recipes = Recipe.all.order("created_at DESC")
   end
 
   def create
-    @recipe = User.first.recipes.build(recipe_params)
+    @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save
       render 'show'
     else
@@ -18,7 +20,7 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = User.first.recipes.find(params[:id])
+    @recipe = current_user.recipes.find(params[:id])
     if @recipe.update(recipe_params)
       render 'show'
     else
@@ -27,7 +29,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @recipe = User.first.recipes.find(params[:id])
+    @recipe = current_user.recipes.find(params[:id])
     @recipe.destroy
     head :no_content
   end

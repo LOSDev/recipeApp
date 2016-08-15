@@ -8,11 +8,15 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     .state('app', {
       url: "/",
       abstract: true,
-      templateUrl: "components/app.html"
+      template: "<my-app></my-app>"
     })
     .state('app.home', {
       url: "",
       template: "<recipe-list></recipe-list>"
+    })
+    .state('app.about', {
+      url: "about",
+      template: "<about-us></about-us>"
     })
 
 });
