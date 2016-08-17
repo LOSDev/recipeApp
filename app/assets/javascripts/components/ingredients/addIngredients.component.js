@@ -2,7 +2,8 @@ angular.module('ingredients')
 .component('addIngredients', {
   templateUrl: "components/ingredients/addIngredients.html",
   bindings: {
-    ingredients: "="
+    ingredients: "=",
+    errors: '='
   },
   controller: AddIngredientsController
 })

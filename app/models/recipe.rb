@@ -8,8 +8,10 @@ class Recipe < ApplicationRecord
   validates :user, presence: true
 
   validates :description, presence: true
-  validates :ingredients, length: { minimum: 1, maximum: 20}
-  validates :directions, length: { minimum: 1, maximum: 20}
+  validates :ingredients, length: { minimum: 1, maximum: 20, :too_short => 'add at least 1 Ingredient',
+            :too_long => 'not more than 20 Ingredients'}
+  validates :directions, length: { minimum: 1, maximum: 20, :too_short => 'add at least 1 Direction',
+            :too_long => 'not more than 20 Directions'}
 
 
   accepts_nested_attributes_for :ingredients,

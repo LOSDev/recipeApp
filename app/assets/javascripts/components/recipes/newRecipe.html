@@ -6,18 +6,21 @@
     <div class="col-md-6">
 
       <form class="form" novalidate ng-submit="$ctrl.submit()">
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error': $ctrl.errors.title}">
           <label for="title">Title</label>
           <input ng-model="$ctrl.recipe.title" class="form-control" type="text" name="title" value="">
+          <span class="help-block" ng-if="$ctrl.errors.title">{{$ctrl.errors.title[0]}}</span>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error': $ctrl.errors.description}">
           <label for="description">Description</label>
           <textarea ng-model="$ctrl.recipe.description" class="form-control" name="description" rows="8" cols="40"></textarea>
+          <span class="help-block" ng-if="$ctrl.errors.description">{{$ctrl.errors.description[0]}}</span>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error': $ctrl.errors.image}">
           <label for="image">Image</label>
           <input type="file" ngf-select ng-model="$ctrl.recipe.image" name="file" ngf-pattern="'image/*'"
             ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100">
+          <span class="help-block" ng-if="$ctrl.errors.image">{{$ctrl.errors.image[0]}}</span>
         </div>
         <img ngf-thumbnail="$ctrl.recipe.image" class="img-responsive">
         <br>
@@ -27,8 +30,8 @@
 
     <div class="col-md-6">
 
-      <add-ingredients ingredients="$ctrl.recipe.ingredients_attributes"></add-ingredients>
-      <add-directions directions="$ctrl.recipe.directions_attributes"></add-directions>
+      <add-ingredients ingredients="$ctrl.recipe.ingredients_attributes" errors="$ctrl.errors.ingredients"></add-ingredients>
+      <add-directions directions="$ctrl.recipe.directions_attributes" errors="$ctrl.errors.ingredients"></add-directions>
 
     </div>
   </div>

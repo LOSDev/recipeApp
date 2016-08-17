@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-5">
-      <img ng-src="{{$ctrl.recipe.image.image.medium.url}}" class="img-responsive img-rounded"/>
+      <img ng-if="$ctrl.recipe.image.image.medium.url" ng-src="{{$ctrl.recipe.image.image.medium.url}}" class="img-responsive img-rounded"/>
+      <img ng-if="!$ctrl.recipe.image.image.medium.url" ng-src="http://placehold.it/400x400" class="img-responsive img-rounded"/>
 
     </div>
     <div class="col-md-7">

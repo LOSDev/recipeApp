@@ -11,12 +11,13 @@ function EditRecipeController(Recipe, $stateParams, $state) {
     vm.recipe = resp.data;
     vm.recipe.ingredients_attributes = resp.data.ingredients;
     vm.recipe.directions_attributes = resp.data.directions;
-
   })
   vm.update = function () {
     Recipe.update(vm.recipe)
     .then(function (resp) {
       $state.go('app.recipeDetails', {id: resp.data.id});
+    }, function (resp) {
+      vm.errors = resp.data;
     })
   }
 }

@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       render 'show'
     else
-      render json: @recipe.errors
+      render json: @recipe.errors, status: :unprocessable_entity
     end
   end
 
@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       render 'show'
     else
-      render json: @recipe.errors
+      render json: @recipe.errors, status: :unprocessable_entity
     end
   end
 

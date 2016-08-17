@@ -2,7 +2,8 @@ angular.module('directions')
 .component('addDirections', {
   templateUrl: "components/directions/addDirections.html",
   bindings: {
-    directions: "="
+    directions: "=",
+    errors: '='
   },
   controller: AddDirectionsController
 })

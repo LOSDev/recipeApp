@@ -16,7 +16,7 @@ function NewRecipeController($state, Recipe) {
     .then(function (resp) {
         $state.go("app.recipeDetails", {id: resp.data.id})
     }, function (resp) {
-        console.log('Error status: ' + resp.status);
+        vm.errors = resp.data;
     }, function (evt) {
         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
         console.log('progress: ' + progressPercentage + '% ' + evt);
