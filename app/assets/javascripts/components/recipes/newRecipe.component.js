@@ -7,7 +7,8 @@ angular.module('recipes')
 function NewRecipeController($state, Recipe) {
   var vm = this;
   vm.recipe = {
-    ingredients_attributes: []
+    ingredients_attributes: [],
+    directions_attributes: []
   };
 
   vm.submit = function () {
@@ -22,5 +23,5 @@ function NewRecipeController($state, Recipe) {
     });
   }
 
-  
+
 }

@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label for="directiond">Add a Direction</label>
+  <input ng-model="$ctrl.direction.step" class="form-control"
+         type="text" name="direction" value="" ng-keyup="$ctrl.addDirection($event)">
+</div>
+<h3 ng-if="$ctrl.directions.length > 0">Directions</h3>
+<ol>
+  <div ng-repeat="dir in $ctrl.directions">
+    <li>{{dir.step}} <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove(dir)"></span></li>
+  </div>
+</ol>

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4" ng-repeat="recipe in $ctrl.recipes">
-        <a ui-sref="app.recipeDetails({id: recipe.id})"><img src="{{recipe.image.image.thumb.url}}" class="img-responsive" /></a>
+        <a ui-sref="app.recipeDetails({id: recipe.id})"><img ng-src="{{recipe.image.image.thumb.url}}" class="img-responsive" /></a>
         <h2><a ui-sref="app.recipeDetails({id: recipe.id})">{{recipe.title}}</a></h2>
     </div>
   </div>
