@@ -10,6 +10,10 @@ angular.module('directions')
 function AddDirectionsController() {
   var vm = this;
 
+  vm.direction = {
+    step: ''
+  };
+
   vm.addDirection = function (event) {
     if (event.which === 13 && vm.direction.step.length > 1) {
       vm.directions.push(vm.direction);
@@ -18,9 +22,6 @@ function AddDirectionsController() {
   }
 
   vm.remove = function (ing) {
-    var index = vm.directions.indexOf(ing);
-    if (index > -1) {
-      vm.directions.splice(index, 1)
-    }
+    ing._destroy = 1;
   }
 }

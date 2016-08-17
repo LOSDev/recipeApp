@@ -6,6 +6,6 @@
 <h3 ng-if="$ctrl.directions.length > 0">Directions</h3>
 <ol>
   <div ng-repeat="dir in $ctrl.directions">
-    <li>{{dir.step}} <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove(dir)"></span></li>
+    <li ng-hide="dir._destroy && dir._destroy == 1">{{dir.step}} <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove(dir)"></span></li>
   </div>
 </ol>

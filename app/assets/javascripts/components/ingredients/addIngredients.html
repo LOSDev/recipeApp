@@ -6,6 +6,6 @@
 <h3 ng-if="$ctrl.ingredients.length > 0">Ingredients</h3>
 <ul>
   <div ng-repeat="ing in $ctrl.ingredients">
-    <li>{{ing.name}} <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove(ing)"></span></li>
+    <li ng-hide="ing._destroy && ing._destroy == 1">{{ing.name}} <span class="glyphicon glyphicon-trash" ng-click="$ctrl.remove(ing)"></span></li>
   </div>
 </ul>
