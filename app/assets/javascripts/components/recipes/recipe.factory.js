@@ -9,8 +9,13 @@ angular.module('recipes')
         })
   },
   o.update = function (recipe) {
-    return $http.put(urlBase + "/" + recipe.id + ".json", {recipe: recipe})
+    return Upload.upload({
+      method: 'PUT',
+      url: urlBase + "/" + recipe.id + ".json",
+      data: {recipe: recipe}
+    })
   },
+  
   o.get = function (id) {
     return $http.get(urlBase + "/" + id + ".json")
   }
