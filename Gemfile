@@ -32,7 +32,11 @@ gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -40,6 +44,9 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'capybara-angular'
 end
 
 group :development do

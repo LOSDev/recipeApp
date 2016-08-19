@@ -1,7 +1,7 @@
 <div class="form-group" ng-class="{'has-error': $ctrl.errors}">
   <label for="directiond">Add a Direction</label>
-  <input ng-model="$ctrl.direction.step" class="form-control"
-         type="text" name="direction" value="" ng-keyup="$ctrl.addDirection($event)">
+  <input ng-model="$ctrl.direction.step" class="form-control" id="recipe-direction"
+         type="text" name="Direction" value="" ng-keyup="$ctrl.addDirection($event)">
   <span class="help-block" ng-if="$ctrl.errors">{{$ctrl.errors[0]}}</span>
 
 </div>

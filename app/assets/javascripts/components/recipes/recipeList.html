@@ -1,8 +1,14 @@
 <div class="container">
   <div class="row">
+    <div class="page-header">
+      <h2>Recipes</h2>
+    </div>
     <div class="col-md-4" ng-repeat="recipe in $ctrl.recipes">
-        <a ui-sref="app.recipeDetails({id: recipe.id})"><img ng-src="{{recipe.image.image.thumb.url}}" class="img-responsive" /></a>
-        <h2><a ui-sref="app.recipeDetails({id: recipe.id})">{{recipe.title}}</a></h2>
+        <a ui-sref="app.recipeDetails({id: recipe.id})">
+          <img ng-if="recipe.image.image.thumb.url" ng-src="{{recipe.image.image.thumb.url}}" class="img-responsive img-rounded"/>
+          <img ng-if="!recipe.image.image.thumb.url" ng-src="http://placehold.it/400x400" class="img-responsive img-rounded"/>
+        </a>
+        <h4><a ui-sref="app.recipeDetails({id: recipe.id})">{{recipe.title}}</a></h4>
     </div>
   </div>
 </div>
