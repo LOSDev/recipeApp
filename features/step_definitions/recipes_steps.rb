@@ -78,3 +78,17 @@ end
 Then(/^I should not see the recipe title$/) do
   expect(page).not_to have_content @recipe.title
 end
+
+When(/^I search for a recipe$/) do
+  @user = FactoryGirl.create(:user)
+  @recipe = FactoryGirl.create(:recipe, user: @user)
+
+  visit '/#/'
+  fill_in 'search_term', with: @recipe.title
+  click_on 'search-button'
+end
+
+Then(/^I should see the recipe title$/) do
+  expect(page).to have_content @recipe.title
+  expect(page).to have_content "Recipe's including:"
+end

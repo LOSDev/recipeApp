@@ -151,4 +151,22 @@ RSpec.describe RecipesController do
       end
     end
   end
+
+  describe "GET search" do
+    before do
+      get :search, xhr: true, params: {q: recipe.title}
+    end
+
+    it "assigns @recipes" do
+      expect(assigns(:recipes).length).to eq(1)
+    end
+
+    it "renders the index template" do
+      expect(response).to render_template("index")
+    end
+
+    it "has http status 200" do
+      expect(response).to have_http_status(:success)
+    end
+  end
 end

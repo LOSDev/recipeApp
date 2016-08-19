@@ -6,6 +6,8 @@ angular.module('recipes')
 
 function RecipeListController(Recipe) {
   var vm = this;
+  vm.headline = "Latest Recipes";
+
   Recipe.all()
   .then(function (resp) {
     vm.recipes = resp.data;

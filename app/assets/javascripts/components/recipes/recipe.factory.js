@@ -15,7 +15,9 @@ angular.module('recipes')
       data: {recipe: recipe}
     })
   },
-  
+  o.search = function (term) {
+    return $http.get(urlBase + "/search.json?q=" + term)
+  }
   o.get = function (id) {
     return $http.get(urlBase + "/" + id + ".json")
   }

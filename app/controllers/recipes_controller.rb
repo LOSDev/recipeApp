@@ -1,9 +1,9 @@
 class RecipesController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
-    @recipes = Recipe.all.order("created_at DESC")
+    @recipes = Recipe.all.order("created_at DESC").limit(20)
   end
 
   def create
@@ -32,6 +32,11 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.find(params[:id])
     @recipe.destroy
     head :no_content
+  end
+
+  def search
+    @recipes = Recipe.where("title LIKE :term OR description LIKE :term", term: "%#{params[:q]}%").limit(20) if params[:q]
+    render 'index'
   end
 
 

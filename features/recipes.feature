@@ -30,3 +30,9 @@ Feature: Recipes
     Given I am a logged in user
     When I delete a recipe
     Then I should not see the recipe title
+
+  @javascript
+  Scenario: Search Recipes
+    Given I am a guest
+    When I search for a recipe
+    Then I should see the recipe title

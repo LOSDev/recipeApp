@@ -18,5 +18,9 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
       url: "about",
       template: "<about-us></about-us>"
     })
+    .state('app.search', {
+      url: "search/:term",
+      template: "<recipe-results></recipe-results>"
+    })
 
 });

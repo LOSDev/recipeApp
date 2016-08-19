@@ -9,6 +9,7 @@
       <li ui-sref-active="active"><a ui-sref="app.home"><span class="glyphicon glyphicon-list-alt"></span> Recipes</a></li>
       <li ui-sref-active="active"><a ui-sref="app.about"><span class="glyphicon glyphicon-user"></span> About</a></li>
     </ul>
+    <search-box></search-box>
     <ul class="nav navbar-nav navbar-right">
       <li ng-show="!$root.user.id" ui-sref-active="active"><a ui-sref="app.login"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
       <li ng-show="$root.user.id"><a ui-sref="app.newRecipe"><span class="glyphicon glyphicon-pencil"></span> New Recipe</a></li>
