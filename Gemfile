@@ -36,6 +36,7 @@ group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'simplecov', :require => false
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'capybara-angular'
+  gem "rails_best_practices"
 end
 
 group :development do
