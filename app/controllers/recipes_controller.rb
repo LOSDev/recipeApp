@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = current_user.recipes.build(recipe_params)
     if @recipe.save
-      render 'show'
+      render 'show', status: :created
     else
       render json: @recipe.errors, status: :unprocessable_entity
     end
