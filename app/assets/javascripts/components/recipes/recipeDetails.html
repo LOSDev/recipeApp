@@ -28,6 +28,14 @@
       <ingredient-list ingredients="$ctrl.recipe.ingredients"></ingredient-list>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-5">
+      <new-review on-submit="$ctrl.addReview(review)"></new-review>
+    </div>
+    <div class="col-md-7">
+      <review-list reviews="$ctrl.recipe.reviews"></review-list>
+    </div>
+  </div>
 
   <p class="col-md-12">
     <a href ng-if="$root.user.id == $ctrl.recipe.user.id" ui-sref="app.editRecipe({id: $ctrl.recipe.id})" class="btn btn-info">Edit Recipe</a>

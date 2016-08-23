@@ -1,0 +1,8 @@
+<h3>Reviews:</h3>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="review in $ctrl.reviews">
+    <star-rating rating="review.rating"></star-rating>
+    <br>
+    {{review.comment}}
+  </li>
+</ul>

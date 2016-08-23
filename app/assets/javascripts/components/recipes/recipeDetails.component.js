@@ -20,4 +20,8 @@ function RecipeDetailsController(Recipe, $stateParams, $state, $window) {
       })
     }
   }
+
+  vm.addReview = function (review) {
+    vm.recipe.reviews.unshift(review)
+  }
 }

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       collection do
         get 'search'
       end
+      resources :reviews, only: [:index, :create]
     end
   end
   root 'home#index'
